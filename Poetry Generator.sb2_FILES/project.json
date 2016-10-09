@@ -1,0 +1,273 @@
+{
+	"objName": "Stage",
+	"variables": [{
+			"name": "name",
+			"value": "friend",
+			"isPersistent": false
+		}],
+	"lists": [{
+			"listName": "adjectives",
+			"contents": ["happy", "tired", "hungry"],
+			"isPersistent": false,
+			"x": 346,
+			"y": 10,
+			"width": 118,
+			"height": 218,
+			"visible": false
+		},
+		{
+			"listName": "nouns",
+			"contents": ["sea", "moon", "tree"],
+			"isPersistent": false,
+			"x": 238,
+			"y": 11,
+			"width": 118,
+			"height": 218,
+			"visible": false
+		},
+		{
+			"listName": "adverbs",
+			"contents": ["loudly", "silently", "endlessly"],
+			"isPersistent": false,
+			"x": 128,
+			"y": 10,
+			"width": 118,
+			"height": 218,
+			"visible": false
+		},
+		{
+			"listName": "verbs",
+			"contents": ["laugh", "dance", "burp"],
+			"isPersistent": false,
+			"x": 16,
+			"y": 12,
+			"width": 118,
+			"height": 218,
+			"visible": false
+		}],
+	"sounds": [{
+			"soundName": "pop",
+			"soundID": 0,
+			"md5": "83a9787d4cb6f3b7632b4ddfebf74367.wav",
+			"sampleCount": 258,
+			"rate": 11025,
+			"format": ""
+		}],
+	"costumes": [{
+			"costumeName": "backdrop1",
+			"baseLayerID": 5,
+			"baseLayerMD5": "e61a2fcee41128823b439086cdb5e182.png",
+			"bitmapResolution": 2,
+			"rotationCenterX": 480,
+			"rotationCenterY": 360
+		}],
+	"currentCostumeIndex": 0,
+	"penLayerMD5": "5c81a336fab8be57adc039a8a2b33ca9.png",
+	"penLayerID": 0,
+	"tempoBPM": 60,
+	"videoAlpha": 0.5,
+	"children": [{
+			"objName": "Ada",
+			"scripts": [[24,
+					26,
+					[["whenClicked"],
+						["say:duration:elapsed:from:", "Hi, I'm Ada!", 2],
+						["doAsk", "What's your name?"],
+						["setVar:to:", "name", ["answer"]],
+						["say:duration:elapsed:from:", ["concatenate:with:", "Hi ", ["readVariable", "name"]], 2],
+						["say:duration:elapsed:from:", "Click the computer to generate a poem.", 2]]]],
+			"sounds": [{
+					"soundName": "pop",
+					"soundID": 0,
+					"md5": "83a9787d4cb6f3b7632b4ddfebf74367.wav",
+					"sampleCount": 258,
+					"rate": 11025,
+					"format": ""
+				}],
+			"costumes": [{
+					"costumeName": "ada",
+					"baseLayerID": 1,
+					"baseLayerMD5": "0b7ad1d3379e7a44f5f51692600085fd.svg",
+					"bitmapResolution": 1,
+					"rotationCenterX": 108,
+					"rotationCenterY": 209
+				}],
+			"currentCostumeIndex": 0,
+			"scratchX": -170,
+			"scratchY": -89,
+			"scale": 1,
+			"direction": 90,
+			"rotationStyle": "normal",
+			"isDraggable": false,
+			"indexInLibrary": 1,
+			"visible": true,
+			"spriteInfo": {
+			}
+		},
+		{
+			"objName": "Computer",
+			"scripts": [[21,
+					26,
+					[["whenClicked"],
+						["say:duration:elapsed:from:", ["concatenate:with:", "Here is your poem ", ["readVariable", "name"]], 2],
+						["playSound:", "computer beeps1"],
+						["doRepeat",
+							10,
+							[["turnLeft:", 5], ["wait:elapsed:from:", 0.1], ["turnRight:", 5], ["wait:elapsed:from:", 0.1]]],
+						["say:duration:elapsed:from:", ["concatenate:with:", "I ", ["getLine:ofList:", "random", "verbs"]], 2],
+						["say:duration:elapsed:from:", ["getLine:ofList:", "random", "adverbs"], 2],
+						["say:duration:elapsed:from:", ["concatenate:with:", "by the ", ["getLine:ofList:", "random", "nouns"]], 2],
+						["say:duration:elapsed:from:", ["concatenate:with:", "I feel ", ["getLine:ofList:", "random", "adjectives"]], 2]]]],
+			"sounds": [{
+					"soundName": "computer beeps1",
+					"soundID": 1,
+					"md5": "1da43f6d52d0615da8a250e28100a80d.wav",
+					"sampleCount": 19200,
+					"rate": 11025,
+					"format": ""
+				}],
+			"costumes": [{
+					"costumeName": "computer",
+					"baseLayerID": 2,
+					"baseLayerMD5": "bab05a10ea9c055b8915626c0b5c94bf.png",
+					"bitmapResolution": 2,
+					"rotationCenterX": 458,
+					"rotationCenterY": 282
+				}],
+			"currentCostumeIndex": 0,
+			"scratchX": 125,
+			"scratchY": -45.05000000000001,
+			"scale": 0.75,
+			"direction": 90,
+			"rotationStyle": "normal",
+			"isDraggable": false,
+			"indexInLibrary": 2,
+			"visible": true,
+			"spriteInfo": {
+			}
+		},
+		{
+			"target": "Stage",
+			"cmd": "getVar:",
+			"param": "name",
+			"color": 15629590,
+			"label": "name",
+			"mode": 1,
+			"sliderMin": 0,
+			"sliderMax": 100,
+			"isDiscrete": true,
+			"x": 5,
+			"y": 5,
+			"visible": false
+		},
+		{
+			"listName": "adjectives",
+			"contents": ["happy", "tired", "hungry"],
+			"isPersistent": false,
+			"x": 346,
+			"y": 10,
+			"width": 118,
+			"height": 218,
+			"visible": false
+		},
+		{
+			"listName": "nouns",
+			"contents": ["sea", "moon", "tree"],
+			"isPersistent": false,
+			"x": 238,
+			"y": 11,
+			"width": 118,
+			"height": 218,
+			"visible": false
+		},
+		{
+			"listName": "adverbs",
+			"contents": ["loudly", "silently", "endlessly"],
+			"isPersistent": false,
+			"x": 128,
+			"y": 10,
+			"width": 118,
+			"height": 218,
+			"visible": false
+		},
+		{
+			"listName": "verbs",
+			"contents": ["laugh", "dance", "burp"],
+			"isPersistent": false,
+			"x": 16,
+			"y": 12,
+			"width": 118,
+			"height": 218,
+			"visible": false
+		},
+		{
+			"objName": "Sprite1",
+			"sounds": [{
+					"soundName": "pop",
+					"soundID": 0,
+					"md5": "83a9787d4cb6f3b7632b4ddfebf74367.wav",
+					"sampleCount": 258,
+					"rate": 11025,
+					"format": ""
+				}],
+			"costumes": [{
+					"costumeName": "costume1",
+					"baseLayerID": 3,
+					"baseLayerMD5": "d36f6603ec293d2c2198d3ea05109fe0.png",
+					"bitmapResolution": 2,
+					"rotationCenterX": 0,
+					"rotationCenterY": 0
+				}],
+			"currentCostumeIndex": 0,
+			"scratchX": -13,
+			"scratchY": -16,
+			"scale": 1,
+			"direction": 90,
+			"rotationStyle": "normal",
+			"isDraggable": false,
+			"indexInLibrary": 4,
+			"visible": true,
+			"spriteInfo": {
+			}
+		},
+		{
+			"objName": "Banner",
+			"sounds": [{
+					"soundName": "pop",
+					"soundID": 0,
+					"md5": "83a9787d4cb6f3b7632b4ddfebf74367.wav",
+					"sampleCount": 258,
+					"rate": 11025,
+					"format": ""
+				}],
+			"costumes": [{
+					"costumeName": "costume1",
+					"baseLayerID": 4,
+					"baseLayerMD5": "dad7c72b8f48851a3cd618fba0914ef9.svg",
+					"bitmapResolution": 1,
+					"rotationCenterX": 209,
+					"rotationCenterY": 138
+				}],
+			"currentCostumeIndex": 0,
+			"scratchX": -1,
+			"scratchY": 48,
+			"scale": 1,
+			"direction": 90,
+			"rotationStyle": "normal",
+			"isDraggable": false,
+			"indexInLibrary": 3,
+			"visible": true,
+			"spriteInfo": {
+			}
+		}],
+	"info": {
+		"flashVersion": "LNX 19,0,0,185",
+		"videoOn": false,
+		"userAgent": "Mozilla\/5.0 (X11; Linux x86_64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/45.0.2454.101 Safari\/537.36",
+		"scriptCount": 2,
+		"swfVersion": "v440.2",
+		"projectID": "77844926",
+		"hasCloudData": false,
+		"spriteCount": 4
+	}
+}

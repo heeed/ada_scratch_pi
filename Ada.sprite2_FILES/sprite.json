@@ -1,0 +1,38 @@
+{
+	"objName": "Ada",
+	"scripts": [[24,
+			26,
+			[["whenClicked"],
+				["say:duration:elapsed:from:", "Hi, I'm Ada!", 2],
+				["doAsk", "What's your name?"],
+				["setVar:to:", "name", ["answer"]],
+				["say:duration:elapsed:from:", ["concatenate:with:", "Hi ", ["readVariable", "name"]], 2],
+				["say:duration:elapsed:from:", "Click the computer to generate a poem.", 2]]]],
+	"sounds": [{
+			"soundName": "pop",
+			"soundID": 0,
+			"md5": "83a9787d4cb6f3b7632b4ddfebf74367.wav",
+			"sampleCount": 258,
+			"rate": 11025,
+			"format": ""
+		}],
+	"costumes": [{
+			"costumeName": "ada",
+			"baseLayerID": 0,
+			"baseLayerMD5": "0b7ad1d3379e7a44f5f51692600085fd.svg",
+			"bitmapResolution": 1,
+			"rotationCenterX": 108,
+			"rotationCenterY": 209
+		}],
+	"currentCostumeIndex": 0,
+	"scratchX": 0,
+	"scratchY": 0,
+	"scale": 1,
+	"direction": 90,
+	"rotationStyle": "normal",
+	"isDraggable": false,
+	"indexInLibrary": 100000,
+	"visible": true,
+	"spriteInfo": {
+	}
+}
